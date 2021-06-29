@@ -22,6 +22,6 @@ const slice = createSlice({
   },
 });
 
-export const {fetchSymbolsSuccess, fetchSymbolsLoading, fetchSymbolsError} =
+export const {fetchTempSuccess, fetchTempLoading, fetchTempError} =
   slice.actions;
 export default slice.reducer;
