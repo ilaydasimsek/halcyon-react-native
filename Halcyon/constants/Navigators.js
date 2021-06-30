@@ -1,7 +1,7 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var NAVIGATORS = {
     FAVORITES: 'FavoritesNavigator',
-    PROFILE: 'ProfileNavigator'
+    PROFILE: 'ProfileNavigator',
 };
-exports["default"] = NAVIGATORS;
+exports.default = NAVIGATORS;

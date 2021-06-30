@@ -1,14 +1,16 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {TError} from "../networking/ErrorHandler";
 
+type DataType = {
+  result: string;
+} | null;
 type SliceType = {
   error: {
     message: string;
     status: string;
   } | null;
   isLoading: boolean;
-  data: {
-    result: string;
-  } | null;
+  data: DataType;
 };
 
 const initialState: SliceType = {
@@ -21,14 +23,14 @@ const slice = createSlice({
   name: 'temp',
   initialState: initialState,
   reducers: {
-    fetchTempSuccess: (state, action) => {
+    fetchTempSuccess: (state, action: PayloadAction<DataType>) => {
       state.data = action.payload;
       state.isLoading = false;
     },
     fetchTempLoading: state => {
       state.isLoading = true;
     },
-    fetchTempError: (state, action) => {
+    fetchTempError: (state, action: PayloadAction<TError>) => {
       state.error = action.payload.error;
       state.isLoading = false;
     },

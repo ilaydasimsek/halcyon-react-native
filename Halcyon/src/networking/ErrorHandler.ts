@@ -1,6 +1,13 @@
 import {AxiosError} from 'axios';
 
-const handleError = (err: AxiosError) => {
+export type TError = {
+  error: {
+    message: string;
+    status: string;
+  };
+};
+
+const handleError = (err: AxiosError): TError => {
   let message = '';
   let status;
   if (err.response) {

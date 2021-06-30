@@ -7,7 +7,7 @@ import {FavoritesNavigator, ProfileNavigator} from '../navigation';
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator = () => {
+const BottomTabNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{

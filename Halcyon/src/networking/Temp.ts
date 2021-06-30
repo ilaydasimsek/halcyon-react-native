@@ -18,7 +18,7 @@ export const getTempScreen = (): AppThunk<void> => async dispatch => {
   } catch (err: any) {
     if (axios.isAxiosError(err)) {
       const error = handleError(err);
-      dispatch(fetchTempError({error}));
+      dispatch(fetchTempError(error));
     } else {
       // TODO handle generic error
     }

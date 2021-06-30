@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getTempScreen} from '../networking/Temp';
 import {RootState} from '../store';
 
-const Profile = () => {
+const Profile: React.FC = () => {
   const dispatch = useDispatch();
   const {isLoading, data} = useSelector((state: RootState) => state.temp);
   useEffect(() => {

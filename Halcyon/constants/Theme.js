@@ -1,12 +1,12 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.SIZES = exports.COLORS = void 0;
 var react_native_1 = require("react-native");
 var _a = react_native_1.Dimensions.get('window'), width = _a.width, height = _a.height;
 exports.COLORS = {
     primary: '#FC6D3F',
     secondary: '#CDCDD2',
-    transparent: 'transparent'
+    transparent: 'transparent',
 };
 exports.SIZES = {
     // global sizes
@@ -28,7 +28,7 @@ exports.SIZES = {
     body5: 12,
     // app dimensions
     width: width,
-    height: height
+    height: height,
 };
 var appTheme = { COLORS: exports.COLORS, SIZES: exports.SIZES };
-exports["default"] = appTheme;
+exports.default = appTheme;

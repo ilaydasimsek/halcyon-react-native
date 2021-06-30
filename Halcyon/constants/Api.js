@@ -1,7 +1,7 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var API = {
     BASE_URL: 'http://127.0.0.1:5000',
-    TEMP: '/temp'
+    TEMP: '/temp',
 };
-exports["default"] = API;
+exports.default = API;

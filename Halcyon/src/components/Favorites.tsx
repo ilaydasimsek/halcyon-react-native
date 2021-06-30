@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-const Favorites = () => {
+const Favorites: React.FC = () => {
   return (
     <View style={styles.screen}>
       <Text>Favorites Screen</Text>
