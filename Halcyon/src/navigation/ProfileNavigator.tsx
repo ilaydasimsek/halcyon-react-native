@@ -1,17 +1,18 @@
-import React from 'react';
+import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {SCREENS} from '../../constants';
-import {getScreen, getScreenTitle} from '../utils/ScreenUtil';
+import {TScreen} from '../../constants';
+import {getScreenTitle} from '../utils/ScreenUtil';
+import {Profile} from '../components';
 
 const Stack = createStackNavigator();
 
-const ProfileNavigator = () => {
-  const screenType = SCREENS.PROFILE;
+const ProfileNavigator: React.FC = () => {
+  const screenType: TScreen = 'Profile';
   return (
     <Stack.Navigator>
       <Stack.Screen
         name={screenType}
-        component={getScreen(screenType)}
+        component={Profile}
         options={{title: getScreenTitle(screenType)}}
       />
     </Stack.Navigator>

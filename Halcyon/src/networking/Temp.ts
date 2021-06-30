@@ -3,11 +3,11 @@ import {
   fetchTempLoading,
   fetchTempSuccess,
 } from '../store/Temp';
-import {api} from './index';
 import handleError from './ErrorHandler';
-import {API} from '../../constants';
+import {AppThunk} from '../store';
+import axios from 'axios';
 
-export const getTempScreen = () => async dispatch => {
+export const getTempScreen = (): AppThunk<void> => async dispatch => {
   dispatch(fetchTempLoading());
   try {
     await sleep(2000);
@@ -15,12 +15,16 @@ export const getTempScreen = () => async dispatch => {
     const data = {result: 'works correctly'};
     dispatch(fetchTempSuccess(data));
     return data;
-  } catch (err) {
-    const error = handleError(err);
-    dispatch(fetchTempError({error}));
+  } catch (err: any) {
+    if (axios.isAxiosError(err)) {
+      const error = handleError(err);
+      dispatch(fetchTempError(error));
+    } else {
+      // TODO handle generic error
+    }
   }
 };
 
-function sleep(ms) {
+function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import {View, StyleSheet, Text, StatusBar} from 'react-native';
+import * as React from 'react';
+import {View, StyleSheet, Text} from 'react-native';
 
-const Favorites = ({navigation}) => {
+const Favorites: React.FC = () => {
   return (
     <View style={styles.screen}>
       <Text>Favorites Screen</Text>

@@ -1,7 +1,9 @@
-export const star = require('../assets/icons/star.png');
-export const user = require('../assets/icons/user.png');
-
-export default {
-  star,
-  user,
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.user = exports.star = void 0;
+exports.star = require('../assets/icons/star.png');
+exports.user = require('../assets/icons/user.png');
+exports.default = {
+    star: exports.star,
+    user: exports.user,
 };

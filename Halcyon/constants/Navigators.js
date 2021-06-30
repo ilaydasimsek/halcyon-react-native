@@ -1,6 +1,7 @@
-const NAVIGATORS = {
-  FAVORITES: 'FavoritesNavigator',
-  PROFILE: 'ProfileNavigator',
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var NAVIGATORS = {
+    FAVORITES: 'FavoritesNavigator',
+    PROFILE: 'ProfileNavigator',
 };
-
-export default NAVIGATORS;
+exports.default = NAVIGATORS;
