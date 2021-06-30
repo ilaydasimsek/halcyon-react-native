@@ -6,7 +6,7 @@ import {Profile} from '../components';
 
 const Stack = createStackNavigator();
 
-const ProfileNavigator = () => {
+const ProfileNavigator: React.FC = () => {
   const screenType: TScreen = 'Profile';
   return (
     <Stack.Navigator>

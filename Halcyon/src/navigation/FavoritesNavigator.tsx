@@ -6,7 +6,7 @@ import {Favorites} from '../components';
 
 const Stack = createStackNavigator();
 
-const FavoritesNavigator = () => {
+const FavoritesNavigator: React.FC = () => {
   const screenType: TScreen = 'Favorites';
   return (
     <Stack.Navigator>

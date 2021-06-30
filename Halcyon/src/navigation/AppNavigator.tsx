@@ -4,7 +4,7 @@ import BottomTabNavigator from '../components/BottomTabNavigator';
 
 const Stack = createStackNavigator();
 
-const AppNavigator = () => {
+const AppNavigator: React.FC = () => {
   return (
     <Stack.Navigator headerMode="none">
       <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
