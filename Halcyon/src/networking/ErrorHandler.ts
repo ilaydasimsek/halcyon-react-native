@@ -1,10 +1,11 @@
-const handleError = err => {
+import {AxiosError} from 'axios';
+
+const handleError = (err: AxiosError) => {
   let message = '';
   let status;
   if (err.response) {
     // error from API
     status = err.response.data?.status;
-    message = err.response.message;
   }
 
   if (err.request && !err.response) {
@@ -14,7 +15,7 @@ const handleError = err => {
     }
   }
 
-  message = message || 'Something went wrong. Please try again';
+  message = 'Something went wrong. Please try again';
 
   return {
     error: {

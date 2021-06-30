@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "yarn tsc && react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -15,7 +15,7 @@
     "@react-navigation/stack": "^5.14.5",
     "@reduxjs/toolkit": "^1.5.1",
     "axios": "^0.21.1",
-    "react": "17.0.1",
+    "react": "^17.0.2",
     "react-native": "0.64.2",
     "react-native-dotenv": "^2.5.5",
     "react-native-gesture-handler": "^1.10.3",
@@ -23,7 +23,6 @@
     "react-native-safe-area-context": "^3.2.0",
     "react-native-safe-area-view": "^1.1.1",
     "react-native-screens": "^3.2.0",
-    "react-native-svg": "^12.1.1",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "redux-persist": "^6.0.0",
@@ -37,9 +36,26 @@
     "eslint": "^7.28.0",
     "jest": "^27.0.4",
     "metro-react-native-babel-preset": "^0.66.0",
-    "react-test-renderer": "17.0.1"
+    "react-test-renderer": "17.0.1",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.5",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "@types/react-native": "^0.64.10",
+    "typescript": "^4.3.4"
+  },
+  "resolutions": {
+    "@types/react": "^17"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

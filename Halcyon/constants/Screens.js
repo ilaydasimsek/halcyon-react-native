@@ -1,7 +1,2 @@
-const SCREENS = {
-  // Base Screens
-  FAVORITES: 'Favorites',
-  PROFILE: 'Profile',
-};
-
-export default SCREENS;
+"use strict";
+exports.__esModule = true;

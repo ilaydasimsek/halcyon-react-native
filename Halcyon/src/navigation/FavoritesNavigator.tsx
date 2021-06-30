@@ -1,19 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
+import {TScreen} from '../../constants';
+import {getScreenTitle} from '../utils/ScreenUtil';
 import {Favorites} from '../components';
-import {SCREENS} from '../../constants';
-import {getScreen, getScreenTitle} from '../utils/ScreenUtil';
 
 const Stack = createStackNavigator();
 
 const FavoritesNavigator = () => {
-  const screenType = SCREENS.FAVORITES;
+  const screenType: TScreen = 'Favorites';
   return (
     <Stack.Navigator>
       <Stack.Screen
         name={screenType}
-        component={getScreen(screenType)}
-        options={{title: getScreenTitle(screenType)}}
+        component={Favorites}
+        options={{title: getScreenTitle('Favorites')}}
       />
     </Stack.Navigator>
   );

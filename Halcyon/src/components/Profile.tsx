@@ -2,18 +2,18 @@ import React, {useEffect} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {getTempScreen} from '../networking/Temp';
+import {RootState} from '../store';
 
-const Profile = ({navigation}) => {
+const Profile = () => {
   const dispatch = useDispatch();
-  const {isLoading, data} = useSelector(state => state.temp);
-
+  const {isLoading, data} = useSelector((state: RootState) => state.temp);
   useEffect(() => {
     dispatch(getTempScreen());
   }, [dispatch]);
 
   return (
     <View style={styles.screen}>
-      <Text>{isLoading ? 'Loading...' : `${data.result}`}</Text>
+      <Text>{isLoading ? 'Loading...' : `${data?.result}`}</Text>
     </View>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {Image, ImageSourcePropType, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {COLORS, NAVIGATORS, icons} from '../../constants';
@@ -37,7 +37,12 @@ const BottomTabNavigator = () => {
   );
 };
 
-const TabBarIconImage = ({icon, focused}) => {
+type TTabBarIconImageProps = {
+  icon: ImageSourcePropType;
+  focused: boolean;
+};
+
+const TabBarIconImage: React.FC<TTabBarIconImageProps> = ({icon, focused}) => {
   return (
     <Image
       source={icon}

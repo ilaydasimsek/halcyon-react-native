@@ -1,12 +1,25 @@
-const {createSlice} = require('@reduxjs/toolkit');
+import {createSlice} from '@reduxjs/toolkit';
+
+type SliceType = {
+  error: {
+    message: string;
+    status: string;
+  } | null;
+  isLoading: boolean;
+  data: {
+    result: string;
+  } | null;
+};
+
+const initialState: SliceType = {
+  error: null,
+  isLoading: false,
+  data: null,
+};
 
 const slice = createSlice({
   name: 'temp',
-  initialState: {
-    error: null,
-    isLoading: false,
-    data: {},
-  },
+  initialState: initialState,
   reducers: {
     fetchTempSuccess: (state, action) => {
       state.data = action.payload;

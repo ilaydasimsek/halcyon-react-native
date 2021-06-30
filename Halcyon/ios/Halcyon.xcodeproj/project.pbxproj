@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6F8B9FCEE7D2D6A6D038C679 /* libPods-Halcyon-HalcyonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C4E31262297D100F67CC6B /* libPods-Halcyon-HalcyonTests.a */; };
-		7F6812F9BFC2A9F77DF09D71 /* libPods-Halcyon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B211F4A2A73745F6C02DD46 /* libPods-Halcyon.a */; };
+		1E18E867A67512A40A4ADF5A /* libPods-Halcyon-HalcyonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8105FC47A3A3C742BB9E397 /* libPods-Halcyon-HalcyonTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		C0B45E5B89F79A173782E7D6 /* libPods-Halcyon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 262F8FA52CF39C3CC289409A /* libPods-Halcyon.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,19 +30,19 @@
 		00E356EE1AD99517003FC87E /* HalcyonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalcyonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* HalcyonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalcyonTests.m; sourceTree = "<group>"; };
+		06FC8049B8B4EF5E52D6B456 /* Pods-Halcyon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halcyon.release.xcconfig"; path = "Target Support Files/Pods-Halcyon/Pods-Halcyon.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Halcyon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halcyon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Halcyon/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Halcyon/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Halcyon/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Halcyon/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Halcyon/main.m; sourceTree = "<group>"; };
-		1B211F4A2A73745F6C02DD46 /* libPods-Halcyon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Halcyon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		40C4E31262297D100F67CC6B /* libPods-Halcyon-HalcyonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Halcyon-HalcyonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		262F8FA52CF39C3CC289409A /* libPods-Halcyon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Halcyon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3638AD3AE3F30A2E19298213 /* Pods-Halcyon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halcyon.debug.xcconfig"; path = "Target Support Files/Pods-Halcyon/Pods-Halcyon.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Halcyon/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C022FAF5AB536B57FF1CB751 /* Pods-Halcyon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halcyon.debug.xcconfig"; path = "Target Support Files/Pods-Halcyon/Pods-Halcyon.debug.xcconfig"; sourceTree = "<group>"; };
-		C6DF4FA92565BCB1D43C7E78 /* Pods-Halcyon-HalcyonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halcyon-HalcyonTests.debug.xcconfig"; path = "Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D3665773329E06A9FBF08D06 /* Pods-Halcyon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halcyon.release.xcconfig"; path = "Target Support Files/Pods-Halcyon/Pods-Halcyon.release.xcconfig"; sourceTree = "<group>"; };
-		DDBB67B3FCA8D3104AC607C5 /* Pods-Halcyon-HalcyonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halcyon-HalcyonTests.release.xcconfig"; path = "Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests.release.xcconfig"; sourceTree = "<group>"; };
+		856A0CFE9CB9E002C802FF30 /* Pods-Halcyon-HalcyonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halcyon-HalcyonTests.release.xcconfig"; path = "Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests.release.xcconfig"; sourceTree = "<group>"; };
+		A8105FC47A3A3C742BB9E397 /* libPods-Halcyon-HalcyonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Halcyon-HalcyonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7DCB465922A5E408266BD39 /* Pods-Halcyon-HalcyonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halcyon-HalcyonTests.debug.xcconfig"; path = "Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F8B9FCEE7D2D6A6D038C679 /* libPods-Halcyon-HalcyonTests.a in Frameworks */,
+				1E18E867A67512A40A4ADF5A /* libPods-Halcyon-HalcyonTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F6812F9BFC2A9F77DF09D71 /* libPods-Halcyon.a in Frameworks */,
+				C0B45E5B89F79A173782E7D6 /* libPods-Halcyon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +100,22 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				1B211F4A2A73745F6C02DD46 /* libPods-Halcyon.a */,
-				40C4E31262297D100F67CC6B /* libPods-Halcyon-HalcyonTests.a */,
+				262F8FA52CF39C3CC289409A /* libPods-Halcyon.a */,
+				A8105FC47A3A3C742BB9E397 /* libPods-Halcyon-HalcyonTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FC65DC0B07A14635426AA07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3638AD3AE3F30A2E19298213 /* Pods-Halcyon.debug.xcconfig */,
+				06FC8049B8B4EF5E52D6B456 /* Pods-Halcyon.release.xcconfig */,
+				C7DCB465922A5E408266BD39 /* Pods-Halcyon-HalcyonTests.debug.xcconfig */,
+				856A0CFE9CB9E002C802FF30 /* Pods-Halcyon-HalcyonTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -121,7 +133,7 @@
 				00E356EF1AD99517003FC87E /* HalcyonTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				F5FB365F7DA1BCFA11606A16 /* Pods */,
+				2FC65DC0B07A14635426AA07 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,18 +149,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F5FB365F7DA1BCFA11606A16 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C022FAF5AB536B57FF1CB751 /* Pods-Halcyon.debug.xcconfig */,
-				D3665773329E06A9FBF08D06 /* Pods-Halcyon.release.xcconfig */,
-				C6DF4FA92565BCB1D43C7E78 /* Pods-Halcyon-HalcyonTests.debug.xcconfig */,
-				DDBB67B3FCA8D3104AC607C5 /* Pods-Halcyon-HalcyonTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,12 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "HalcyonTests" */;
 			buildPhases = (
-				087D39C00E6F46ED5C2B01E8 /* [CP] Check Pods Manifest.lock */,
+				07105820CED1F58D5658954F /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				DAA57EF1AED5318D863CC8E8 /* [CP] Embed Pods Frameworks */,
-				C138015B6C03A5878D5011D3 /* [CP] Copy Pods Resources */,
+				6BD626DA9A88CE292BE1C1E0 /* [CP] Embed Pods Frameworks */,
+				CB0E277AB5F07A72D31F4799 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,14 +177,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Halcyon" */;
 			buildPhases = (
-				DAFB4B36DCAE63BEED446C65 /* [CP] Check Pods Manifest.lock */,
+				0061390DBB68AB332C8B1A24 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				C61DD852A7ECC87FB6A0A687 /* [CP] Embed Pods Frameworks */,
-				B993566C0082441C0DFBC7E1 /* [CP] Copy Pods Resources */,
+				E9D382E7573CF8BE2619C1ED /* [CP] Embed Pods Frameworks */,
+				27AB4998BF10135833EF84DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +251,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0061390DBB68AB332C8B1A24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Halcyon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,7 +287,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		087D39C00E6F46ED5C2B01E8 /* [CP] Check Pods Manifest.lock */ = {
+		07105820CED1F58D5658954F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,7 +309,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B993566C0082441C0DFBC7E1 /* [CP] Copy Pods Resources */ = {
+		27AB4998BF10135833EF84DC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,41 +326,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Halcyon/Pods-Halcyon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C138015B6C03A5878D5011D3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C61DD852A7ECC87FB6A0A687 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Halcyon/Pods-Halcyon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Halcyon/Pods-Halcyon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Halcyon/Pods-Halcyon-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DAA57EF1AED5318D863CC8E8 /* [CP] Embed Pods Frameworks */ = {
+		6BD626DA9A88CE292BE1C1E0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -355,26 +343,38 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DAFB4B36DCAE63BEED446C65 /* [CP] Check Pods Manifest.lock */ = {
+		CB0E277AB5F07A72D31F4799 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Halcyon-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Halcyon-HalcyonTests/Pods-Halcyon-HalcyonTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D382E7573CF8BE2619C1ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Halcyon/Pods-Halcyon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Halcyon/Pods-Halcyon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Halcyon/Pods-Halcyon-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -429,7 +429,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6DF4FA92565BCB1D43C7E78 /* Pods-Halcyon-HalcyonTests.debug.xcconfig */;
+			baseConfigurationReference = C7DCB465922A5E408266BD39 /* Pods-Halcyon-HalcyonTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -456,7 +456,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDBB67B3FCA8D3104AC607C5 /* Pods-Halcyon-HalcyonTests.release.xcconfig */;
+			baseConfigurationReference = 856A0CFE9CB9E002C802FF30 /* Pods-Halcyon-HalcyonTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -480,7 +480,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C022FAF5AB536B57FF1CB751 /* Pods-Halcyon.debug.xcconfig */;
+			baseConfigurationReference = 3638AD3AE3F30A2E19298213 /* Pods-Halcyon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -506,7 +506,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3665773329E06A9FBF08D06 /* Pods-Halcyon.release.xcconfig */;
+			baseConfigurationReference = 06FC8049B8B4EF5E52D6B456 /* Pods-Halcyon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
