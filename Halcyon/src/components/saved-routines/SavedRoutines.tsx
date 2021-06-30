@@ -1,10 +1,11 @@
 import * as React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import SavedItemsList from './SavedItemsList';
 
-const Favorites: React.FC = () => {
+const SavedRoutines: React.FC = () => {
   return (
     <View style={styles.screen}>
-      <Text>Favorites Screen</Text>
+      <SavedItemsList />
     </View>
   );
 };
@@ -14,8 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 12,
   },
 });
 
-export default Favorites;
+export default SavedRoutines;

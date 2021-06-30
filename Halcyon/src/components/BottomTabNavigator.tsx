@@ -2,8 +2,12 @@ import React from 'react';
 import {Image, ImageSourcePropType, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {COLORS, NAVIGATORS, icons} from '../../constants';
-import {FavoritesNavigator, ProfileNavigator} from '../navigation';
+import {COLORS, icons} from '../../constants';
+import {
+  SavedRoutinesNavigator,
+  ProfileNavigator,
+  NavigatorType,
+} from '../navigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,8 +19,8 @@ const BottomTabNavigator: React.FC = () => {
         style: styles.navigator,
       }}>
       <Tab.Screen
-        name={NAVIGATORS.FAVORITES}
-        component={FavoritesNavigator}
+        name={NavigatorType.FAVORITES}
+        component={SavedRoutinesNavigator}
         options={{
           tabBarIcon: ({focused}) => (
             <TabBarIconImage icon={icons.star} focused={focused} />
@@ -25,7 +29,7 @@ const BottomTabNavigator: React.FC = () => {
       />
 
       <Tab.Screen
-        name={NAVIGATORS.PROFILE}
+        name={NavigatorType.PROFILE}
         component={ProfileNavigator}
         options={{
           tabBarIcon: ({focused}) => (

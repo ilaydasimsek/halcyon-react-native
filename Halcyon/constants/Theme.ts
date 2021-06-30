@@ -30,6 +30,10 @@ export const SIZES = {
   // app dimensions
   width,
   height,
+
+  // table dimensions
+  tableRowHeight: 80,
+  tableRowPadding: 10,
 };
 
 const appTheme = {COLORS, SIZES};

@@ -1,5 +1,10 @@
 import AppNavigator from './AppNavigator';
 import ProfileNavigator from './ProfileNavigator';
-import FavoritesNavigator from './FavoritesNavigator';
+import SavedRoutinesNavigator from './SavedRoutinesNavigator';
 
-export {AppNavigator, ProfileNavigator, FavoritesNavigator};
+export enum NavigatorType {
+  FAVORITES = 'FavoritesNavigator',
+  PROFILE = 'ProfileNavigator',
+}
+
+export {AppNavigator, ProfileNavigator, SavedRoutinesNavigator};
