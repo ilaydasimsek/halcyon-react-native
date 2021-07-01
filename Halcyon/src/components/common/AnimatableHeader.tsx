@@ -1,27 +1,53 @@
-import React from 'react';
-import {Text, Animated, StyleSheet} from 'react-native';
+import React, {useEffect, useMemo, useState} from 'react';
+import {Text, Animated, StyleSheet, Image, ImageSourcePropType} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {COLORS, SIZES} from '../../style';
 
 type THeader = {
   title: string;
+  icon: ImageSourcePropType,
   animatedValue: Animated.Value;
 };
 
-const AnimatableHeader: React.FC<THeader> = ({title, animatedValue}) => {
+const AnimatableHeader: React.FC<THeader> = ({title, icon, animatedValue}) => {
   const insets = useSafeAreaInsets();
+  const [defaultHeightReached, setDefaultHeightReached] = useState(false);
 
-  const headerHeight = animatedValue.interpolate({
-    inputRange: [0, SIZES.headerFullHeight + insets.top],
-    outputRange: [
-      SIZES.headerFullHeight + insets.top,
-      insets.top + SIZES.headerBaseHeight,
-    ],
-    extrapolate: 'clamp',
-  });
+  const headerHeight = useMemo(
+    () =>
+      animatedValue.interpolate({
+        inputRange: [0, SIZES.headerFullHeight + insets.top],
+        outputRange: [
+          SIZES.headerFullHeight + insets.top,
+          insets.top + SIZES.headerBaseHeight,
+        ],
+        extrapolate: 'clamp',
+      }),
+    [animatedValue, insets],
+  );
+
+  useEffect(() => {
+    const id = headerHeight.addListener(({value}) => {
+      const defaultHeight = insets.top + SIZES.headerBaseHeight;
+      if (value <= defaultHeight) {
+        setDefaultHeightReached(true);
+      } else if (value >= defaultHeight) {
+        setDefaultHeightReached(false);
+      }
+    });
+    return () => headerHeight.removeListener(id);
+  }, [headerHeight, insets]);
 
   return (
     <Animated.View style={{...styles.main, height: headerHeight}}>
+      <Image
+        source={icon}
+        style={{
+          ...styles.image,
+          marginTop: insets.top,
+          display: defaultHeightReached ? 'none' : 'flex',
+        }}
+      />
       <Text style={styles.text}>{title}</Text>
     </Animated.View>
   );
@@ -31,7 +57,7 @@ const styles = StyleSheet.create({
   main: {
     width: '100%',
     top: 0,
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     left: 0,
     right: 0,
@@ -42,7 +68,12 @@ const styles = StyleSheet.create({
   text: {
     color: COLORS.ivory,
     fontSize: 24,
+    marginBottom: 8,
     fontWeight: 'bold',
+  },
+  image: {
+    flex: 1,
+    resizeMode: 'contain',
   },
 });
 

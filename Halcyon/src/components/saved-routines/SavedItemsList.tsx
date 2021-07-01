@@ -52,7 +52,7 @@ type TSavedItemRow = {
 // TODO show icon using icon URL
 const SavedItemRow: React.FC<TSavedItemRow> = ({title, onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
       <View style={styles.rowStyle}>
         <Image source={icons.lotusFlower} style={styles.imageStyle} />
         <Text style={styles.textStyle}>{title}</Text>
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     margin: 6,
+    marginHorizontal: 12,
     borderRadius: 18,
     backgroundColor: COLORS.ivory,
     shadowColor: '#000',
@@ -89,9 +90,10 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   imageStyle: {
-    height: SIZES.tableRowHeight - SIZES.tableRowPadding,
-    width: SIZES.tableRowHeight - SIZES.tableRowPadding,
+    height: SIZES.tableRowHeight - SIZES.tableRowPadding - 20,
+    width: SIZES.tableRowHeight - SIZES.tableRowPadding - 20,
     borderRadius: SIZES.tableRowHeight - SIZES.tableRowPadding,
+    tintColor: COLORS.primary,
   },
   textStyle: {
     paddingHorizontal: SIZES.padding,
