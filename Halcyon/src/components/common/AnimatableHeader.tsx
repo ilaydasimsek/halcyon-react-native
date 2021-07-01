@@ -1,11 +1,17 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {Text, Animated, StyleSheet, Image, ImageSourcePropType} from 'react-native';
+import {
+  Text,
+  Animated,
+  StyleSheet,
+  Image,
+  ImageSourcePropType,
+} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {COLORS, SIZES} from '../../style';
+import {colors, SIZES, fonts} from '../../style';
 
 type THeader = {
   title: string;
-  icon: ImageSourcePropType,
+  icon: ImageSourcePropType;
   animatedValue: Animated.Value;
 };
 
@@ -48,7 +54,7 @@ const AnimatableHeader: React.FC<THeader> = ({title, icon, animatedValue}) => {
           display: defaultHeightReached ? 'none' : 'flex',
         }}
       />
-      <Text style={styles.text}>{title}</Text>
+      <Text style={fonts.LightBold24}>{title}</Text>
     </Animated.View>
   );
 };
@@ -57,19 +63,12 @@ const styles = StyleSheet.create({
   main: {
     width: '100%',
     top: 0,
+    zIndex: 10,
+    backgroundColor: colors.primary,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    left: 0,
-    right: 0,
-    zIndex: 10,
-    backgroundColor: COLORS.primary,
     borderRadius: 18,
-  },
-  text: {
-    color: COLORS.ivory,
-    fontSize: 24,
-    marginBottom: 8,
-    fontWeight: 'bold',
+    paddingBottom: 8,
   },
   image: {
     flex: 1,

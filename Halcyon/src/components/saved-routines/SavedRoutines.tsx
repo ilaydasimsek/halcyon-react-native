@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {View, StyleSheet, Animated} from 'react-native';
 import SavedItemsList from './SavedItemsList';
-import {COLORS} from '../../style';
+import {colors} from '../../style';
 import AnimatableHeader from '../common/AnimatableHeader';
 import {useRef} from 'react';
-import {icons} from '../../../constants';
+import {icons, images} from '../../../constants';
 
 const SavedRoutines: React.FC = () => {
   const offset: Animated.Value = useRef(new Animated.Value(0)).current;
@@ -13,7 +13,7 @@ const SavedRoutines: React.FC = () => {
     <View style={styles.screen}>
       <AnimatableHeader
         title="Saved Routines"
-        icon={icons.yogaPose}
+        icon={images.yogaPose}
         animatedValue={offset}
       />
       <SavedItemsList
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.background,
+    backgroundColor: colors.background,
   },
 });
 

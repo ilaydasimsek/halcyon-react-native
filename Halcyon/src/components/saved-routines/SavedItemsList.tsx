@@ -1,15 +1,8 @@
 import React from 'react';
-import {
-  Animated,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import {icons, ScreenName} from '../../../constants';
-import {COLORS, SIZES} from '../../style';
+import {Animated, StyleSheet, View} from 'react-native';
+import {ScreenName} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
+import SavedItemRow from './SavedItemRow';
 
 const data = Array(12)
   .fill(0)
@@ -44,23 +37,6 @@ const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
   );
 };
 
-type TSavedItemRow = {
-  title: string;
-  onPress: () => void;
-};
-
-// TODO show icon using icon URL
-const SavedItemRow: React.FC<TSavedItemRow> = ({title, onPress}) => {
-  return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
-      <View style={styles.rowStyle}>
-        <Image source={icons.lotusFlower} style={styles.imageStyle} />
-        <Text style={styles.textStyle}>{title}</Text>
-      </View>
-    </TouchableOpacity>
-  );
-};
-
 const styles = StyleSheet.create({
   main: {
     flex: 1,
@@ -70,34 +46,6 @@ const styles = StyleSheet.create({
   table: {
     paddingTop: 4,
     paddingBottom: 12,
-  },
-  rowStyle: {
-    height: SIZES.tableRowHeight,
-    paddingHorizontal: SIZES.padding,
-    flexDirection: 'row',
-    alignItems: 'center',
-    margin: 6,
-    marginHorizontal: 12,
-    borderRadius: 18,
-    backgroundColor: COLORS.ivory,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 2.5,
-    elevation: 4,
-  },
-  imageStyle: {
-    height: SIZES.tableRowHeight - SIZES.tableRowPadding - 20,
-    width: SIZES.tableRowHeight - SIZES.tableRowPadding - 20,
-    borderRadius: SIZES.tableRowHeight - SIZES.tableRowPadding,
-    tintColor: COLORS.primary,
-  },
-  textStyle: {
-    paddingHorizontal: SIZES.padding,
-    fontSize: 18,
   },
 });
 

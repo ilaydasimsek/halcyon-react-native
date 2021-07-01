@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, ImageSourcePropType, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {COLORS} from '../style';
+import {colors} from '../style';
 import {icons, ScreenName} from '../../constants';
 import {Profile, SavedRoutines} from '../components';
 
@@ -60,12 +60,12 @@ const styles = StyleSheet.create({
   focusedTabBarItem: {
     width: 25,
     height: 25,
-    tintColor: COLORS.primary,
+    tintColor: colors.primary,
   },
   unfocusedTabBarItem: {
     width: 25,
     height: 25,
-    tintColor: COLORS.secondary,
+    tintColor: colors.secondary,
   },
 });
 

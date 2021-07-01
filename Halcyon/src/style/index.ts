@@ -1,4 +1,6 @@
-import {COLORS} from './Colors';
+import {colors} from './Colors';
 import {SIZES} from './Sizes';
+import {fonts} from './Fonts';
+import {layout} from './Layout';
 
-export {COLORS, SIZES};
+export {colors, SIZES, fonts, layout};
