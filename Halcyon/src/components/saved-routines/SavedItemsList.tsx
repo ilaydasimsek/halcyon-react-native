@@ -1,6 +1,7 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
-import {icons, SIZES} from '../../../constants';
+import {Animated, Image, StyleSheet, Text, View} from 'react-native';
+import {icons} from '../../../constants';
+import {COLORS, SIZES} from '../../style';
 
 const data = Array(12)
   .fill(0)
@@ -10,12 +11,19 @@ const data = Array(12)
     iconUrl: null,
   }));
 
-const SavedItemsList = () => {
+type TSavedItemsList = {
+  onScroll: () => any;
+};
+
+const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
   return (
-    <View style={styles.table}>
-      <FlatList
+    <View style={styles.main}>
+      <Animated.FlatList
         data={data}
         renderItem={({item}) => <SavedItemRow {...item} />}
+        style={styles.table}
+        contentContainerStyle={styles.table}
+        onScroll={onScroll}
       />
     </View>
   );
@@ -36,18 +44,31 @@ const SavedItemRow = ({title}: TSavedItemRow) => {
 };
 
 const styles = StyleSheet.create({
-  table: {
+  main: {
+    flex: 1,
     width: '100%',
+    paddingBottom: 0,
+  },
+  table: {
+    paddingTop: 4,
+    paddingBottom: 12,
   },
   rowStyle: {
-    height: 100,
+    height: SIZES.tableRowHeight,
     paddingHorizontal: SIZES.padding,
     flexDirection: 'row',
     alignItems: 'center',
-    borderColor: 'pink',
-    borderWidth: 3,
     margin: 6,
-    borderRadius: 22,
+    borderRadius: 18,
+    backgroundColor: COLORS.ivory,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 2.5,
+    elevation: 4,
   },
   imageStyle: {
     height: SIZES.tableRowHeight - SIZES.tableRowPadding,

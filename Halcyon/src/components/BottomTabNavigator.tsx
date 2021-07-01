@@ -2,7 +2,8 @@ import React from 'react';
 import {Image, ImageSourcePropType, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {COLORS, icons} from '../../constants';
+import {COLORS} from '../style';
+import {icons} from '../../constants';
 import {
   SavedRoutinesNavigator,
   ProfileNavigator,

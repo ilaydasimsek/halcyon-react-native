@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 const SavedRoutinesNavigator: React.FC = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator headerMode="none">
       <Stack.Screen
         name={ScreenName.SAVED_ROUTINES}
         component={SavedRoutines}
