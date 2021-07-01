@@ -1,7 +1,15 @@
 import React from 'react';
-import {Animated, Image, StyleSheet, Text, View} from 'react-native';
-import {icons} from '../../../constants';
+import {
+  Animated,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {icons, ScreenName} from '../../../constants';
 import {COLORS, SIZES} from '../../style';
+import {useNavigation} from '@react-navigation/native';
 
 const data = Array(12)
   .fill(0)
@@ -16,11 +24,18 @@ type TSavedItemsList = {
 };
 
 const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
+  const navigation = useNavigation();
+  const onRowPress = (id: number) => {
+    navigation.navigate(ScreenName.ROUTINE_DETAILS, {id: id});
+  };
+
   return (
     <View style={styles.main}>
       <Animated.FlatList
         data={data}
-        renderItem={({item}) => <SavedItemRow {...item} />}
+        renderItem={({item}) => (
+          <SavedItemRow {...item} onPress={() => onRowPress(item.id)} />
+        )}
         style={styles.table}
         contentContainerStyle={styles.table}
         onScroll={onScroll}
@@ -31,15 +46,18 @@ const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
 
 type TSavedItemRow = {
   title: string;
+  onPress: () => void;
 };
 
 // TODO show icon using icon URL
-const SavedItemRow = ({title}: TSavedItemRow) => {
+const SavedItemRow: React.FC<TSavedItemRow> = ({title, onPress}) => {
   return (
-    <View style={styles.rowStyle}>
-      <Image source={icons.lotusFlower} style={styles.imageStyle} />
-      <Text style={styles.textStyle}>{title}</Text>
-    </View>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.rowStyle}>
+        <Image source={icons.lotusFlower} style={styles.imageStyle} />
+        <Text style={styles.textStyle}>{title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {getScreenTitle} from '../utils/ScreenUtil';
 import {SavedRoutines} from '../components';
 import {ScreenName} from '../../constants';
+import RoutineDetails from '../components/saved-routines/RoutineDetails';
 
 const Stack = createStackNavigator();
 
@@ -12,7 +12,10 @@ const SavedRoutinesNavigator: React.FC = () => {
       <Stack.Screen
         name={ScreenName.SAVED_ROUTINES}
         component={SavedRoutines}
-        options={{title: getScreenTitle(ScreenName.SAVED_ROUTINES)}}
+      />
+      <Stack.Screen
+        name={ScreenName.ROUTINE_DETAILS}
+        component={RoutineDetails}
       />
     </Stack.Navigator>
   );
