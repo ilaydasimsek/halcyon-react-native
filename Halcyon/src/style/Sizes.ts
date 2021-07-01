@@ -1,12 +1,6 @@
 import {Dimensions} from 'react-native';
 const {width, height} = Dimensions.get('window');
 
-export const COLORS = {
-  primary: '#FC6D3F', // orange
-  secondary: '#CDCDD2', // gray
-  transparent: 'transparent',
-};
-
 export const SIZES = {
   // global sizes
   base: 8,
@@ -17,6 +11,7 @@ export const SIZES = {
 
   // font sizes
   largeTitle: 50,
+  mediumTitle: 24,
   h1: 30,
   h2: 22,
   h3: 20,
@@ -30,8 +25,12 @@ export const SIZES = {
   // app dimensions
   width,
   height,
+
+  // table dimensions
+  tableRowHeight: 85,
+  tableRowPadding: 10,
+
+  // header
+  headerBaseHeight: 44,
+  headerFullHeight: 135,
 };
-
-const appTheme = {COLORS, SIZES};
-
-export default appTheme;

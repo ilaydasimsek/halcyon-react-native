@@ -3,14 +3,14 @@ import {SafeAreaProvider} from 'react-native-safe-area-view';
 import {Provider} from 'react-redux';
 import store from './src/store';
 import {NavigationContainer} from '@react-navigation/native';
-import BottomTabNavigator from './src/components/BottomTabNavigator';
+import AppNavigator from './src/navigation/AppNavigator';
 
 const App = () => {
   return (
     <NavigationContainer>
       <Provider store={store}>
         <SafeAreaProvider>
-          <BottomTabNavigator />
+          <AppNavigator />
         </SafeAreaProvider>
       </Provider>
     </NavigationContainer>

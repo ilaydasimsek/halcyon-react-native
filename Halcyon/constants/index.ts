@@ -3,10 +3,7 @@
  */
 
 import icons from './Icons';
-import {COLORS, SIZES} from './Theme';
-import TScreen from './Screens';
-import NAVIGATORS from './Navigators';
+import ScreenName from './ScreenName';
 import API from './Api';
 
-export {icons, COLORS, SIZES, NAVIGATORS, API};
-export type {TScreen};
+export {icons, API, ScreenName};

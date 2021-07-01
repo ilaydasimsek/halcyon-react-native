@@ -1,4 +1,5 @@
-import Favorites from './Favorites';
+import SavedRoutines from './saved-routines/SavedRoutines';
 import Profile from './Profile';
+import RoutineDetails from './saved-routines/RoutineDetails';
 
-export {Favorites, Profile};
+export {SavedRoutines, Profile, RoutineDetails};

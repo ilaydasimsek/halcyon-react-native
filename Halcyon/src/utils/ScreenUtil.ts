@@ -1,10 +1,10 @@
-import TScreen from '../../constants/Screens';
+import {ScreenName} from '../../constants';
 
-export const getScreenTitle = (screenType: TScreen) => {
+export const getScreenTitle = (screenType: ScreenName) => {
   switch (screenType) {
-    case 'Favorites':
-      return 'Favorites';
-    case 'Profile':
+    case ScreenName.SAVED_ROUTINES:
+      return 'Saved Routines';
+    case ScreenName.PROFILE:
       return 'Profile';
     default:
       return '';
