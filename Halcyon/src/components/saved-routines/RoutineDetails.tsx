@@ -1,27 +1,25 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import {RouteProp, useRoute} from '@react-navigation/native';
+import {StyleSheet, View} from 'react-native';
+import {BasicHeader} from '../common';
+import {images} from '../../../constants';
+import SavedItemsList from './SavedItemsList';
 
-type TRouteProps = {
-  RoutineDetails: {
-    id: number;
-  };
+type TRoutineDetails = {
+  title: string;
 };
 
-const RoutineDetails: React.FC = () => {
-  const route = useRoute<RouteProp<TRouteProps, 'RoutineDetails'>>();
+const RoutineDetails: React.FC<TRoutineDetails> = ({title}) => {
   return (
-    <View style={styles.screen}>
-      <Text>{`Screen with id ${route.params.id}`}</Text>
+    <View style={{...styles.screen, backgroundColor: 'pink'}}>
+      <BasicHeader title={title} backgroundImage={images.floralBackground} />
+      <SavedItemsList onScroll={() => {}} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: '100%',
     paddingVertical: 12,
   },
 });

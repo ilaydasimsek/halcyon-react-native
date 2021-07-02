@@ -26,6 +26,11 @@ export const typography = StyleSheet.create({
     fontFamily: FONT_FAMILY.bold,
     color: FONT_COLOR.light,
   },
+  lightHeading2: {
+    fontSize: 22,
+    fontFamily: FONT_FAMILY.bold,
+    color: FONT_COLOR.light,
+  },
   heading2: {
     fontSize: 22,
     fontFamily: FONT_FAMILY.semibold,

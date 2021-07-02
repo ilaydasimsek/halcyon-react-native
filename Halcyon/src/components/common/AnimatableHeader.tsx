@@ -69,7 +69,7 @@ const AnimatableHeader: React.FC<THeader> = ({
           display: defaultHeightReached ? 'none' : 'flex',
         }}
       />
-      <Text style={[typography.lightHeading1, styles.text]}>{title}</Text>
+      <Text style={[typography.lightHeading2, styles.text]}>{title}</Text>
     </Animated.View>
   );
 };

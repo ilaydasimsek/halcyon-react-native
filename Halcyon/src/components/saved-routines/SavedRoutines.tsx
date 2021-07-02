@@ -31,7 +31,7 @@ const SavedRoutines: React.FC = () => {
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1,
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.background,
