@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {images} from '../../../constants';
-import {colors, fonts, layout, SIZES} from '../../style';
+import {icons, images} from '../../../constants';
+import {colors, fonts, layout, shadow, SIZES} from '../../style';
 
 type TSavedItemRow = {
   title: string;
@@ -12,9 +12,10 @@ type TSavedItemRow = {
 const SavedItemRow: React.FC<TSavedItemRow> = ({title, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
-      <View style={[styles.row, layout.lowShadow]}>
+      <View style={[layout.tableRow, shadow.low]}>
         <Image source={images.mandala} style={styles.image} />
         <RowDetails title={title} />
+        <Image source={icons.next} style={styles.nextIcon} />
       </View>
     </TouchableOpacity>
   );
@@ -34,23 +35,21 @@ const RowDetails: React.FC<TRowDetails> = ({title}) => {
 };
 
 const styles = StyleSheet.create({
-  row: {
-    height: SIZES.tableRowHeight,
-    paddingHorizontal: SIZES.tableRowPadding,
-    flexDirection: 'row',
-    alignItems: 'center',
-    margin: 6,
-    marginHorizontal: 12,
-    borderRadius: 18,
-    backgroundColor: colors.ivory,
-  },
   image: {
     height: SIZES.tableRowHeight - SIZES.tableRowPadding - 20,
     width: SIZES.tableRowHeight - SIZES.tableRowPadding - 20,
     borderRadius: SIZES.tableRowHeight - SIZES.tableRowPadding,
     marginRight: 12,
   },
-  details: {},
+  nextIcon: {
+    height: 28,
+    width: 28,
+    marginRight: 8,
+    tintColor: colors.primary,
+  },
+  details: {
+    flex: 1,
+  },
 });
 
 export default SavedItemRow;

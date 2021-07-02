@@ -8,14 +8,21 @@ import {
 } from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {colors, SIZES, fonts} from '../../style';
+import {images} from '../../../constants';
 
 type THeader = {
   title: string;
   icon: ImageSourcePropType;
+  backgroundImage?: ImageSourcePropType;
   animatedValue: Animated.Value;
 };
 
-const AnimatableHeader: React.FC<THeader> = ({title, icon, animatedValue}) => {
+const AnimatableHeader: React.FC<THeader> = ({
+  title,
+  icon,
+  backgroundImage,
+  animatedValue,
+}) => {
   const insets = useSafeAreaInsets();
   const [defaultHeightReached, setDefaultHeightReached] = useState(false);
 
@@ -46,6 +53,14 @@ const AnimatableHeader: React.FC<THeader> = ({title, icon, animatedValue}) => {
 
   return (
     <Animated.View style={{...styles.main, height: headerHeight}}>
+      {backgroundImage && (
+        <Image
+          source={images.floralBackground}
+          style={{
+            ...styles.backgroundImage,
+          }}
+        />
+      )}
       <Image
         source={icon}
         style={{
@@ -54,7 +69,7 @@ const AnimatableHeader: React.FC<THeader> = ({title, icon, animatedValue}) => {
           display: defaultHeightReached ? 'none' : 'flex',
         }}
       />
-      <Text style={fonts.LightBold24}>{title}</Text>
+      <Text style={[fonts.LightBold24, styles.text]}>{title}</Text>
     </Animated.View>
   );
 };
@@ -68,11 +83,20 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     borderRadius: 18,
-    paddingBottom: 8,
+  },
+  backgroundImage: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    borderRadius: 18,
+    top: 0,
   },
   image: {
     flex: 1,
     resizeMode: 'contain',
+  },
+  text: {
+    paddingBottom: 22,
   },
 });
 

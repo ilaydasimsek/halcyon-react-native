@@ -4,7 +4,7 @@ import SavedItemsList from './SavedItemsList';
 import {colors} from '../../style';
 import AnimatableHeader from '../common/AnimatableHeader';
 import {useRef} from 'react';
-import {icons, images} from '../../../constants';
+import {images} from '../../../constants';
 
 const SavedRoutines: React.FC = () => {
   const offset: Animated.Value = useRef(new Animated.Value(0)).current;
@@ -14,6 +14,7 @@ const SavedRoutines: React.FC = () => {
       <AnimatableHeader
         title="Saved Routines"
         icon={images.yogaPose}
+        backgroundImage={images.floralBackground}
         animatedValue={offset}
       />
       <SavedItemsList

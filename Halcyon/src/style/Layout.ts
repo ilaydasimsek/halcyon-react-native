@@ -1,8 +1,22 @@
 import {StyleSheet} from 'react-native';
 import {colors} from './Colors';
+import {SIZES} from './Sizes';
 
 export const layout = StyleSheet.create({
-  lowShadow: {
+  tableRow: {
+    height: SIZES.tableRowHeight,
+    paddingHorizontal: SIZES.tableRowPadding,
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: 6,
+    marginHorizontal: 12,
+    borderRadius: 18,
+    backgroundColor: colors.ivory,
+  },
+});
+
+export const shadow = StyleSheet.create({
+  low: {
     shadowColor: colors.black,
     shadowOffset: {
       width: 0,
@@ -12,7 +26,7 @@ export const layout = StyleSheet.create({
     shadowRadius: 2.5,
     elevation: 4,
   },
-  mediumShadow: {
+  medium: {
     shadowColor: colors.black,
     shadowOffset: {
       width: 0,
@@ -23,7 +37,7 @@ export const layout = StyleSheet.create({
 
     elevation: 8,
   },
-  highShadow: {
+  high: {
     shadowColor: colors.black,
     shadowOffset: {
       width: 0,

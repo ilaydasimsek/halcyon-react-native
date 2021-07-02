@@ -44,6 +44,6 @@ export const fonts = StyleSheet.create({
   LightGrayRegular14: {
     fontSize: 14,
     fontFamily: FONT_FAMILY.regular,
-    color: colors.lightGray,
+    color: colors.gray,
   },
 });

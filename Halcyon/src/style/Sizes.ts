@@ -12,5 +12,5 @@ export const SIZES = {
 
   // header
   headerBaseHeight: 44,
-  headerFullHeight: 135,
+  headerFullHeight: 150,
 };

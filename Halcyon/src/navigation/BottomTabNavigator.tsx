@@ -56,6 +56,7 @@ const TabBarIconImage: React.FC<TTabBarIconImageProps> = ({icon, focused}) => {
 const styles = StyleSheet.create({
   navigator: {
     elevation: 0,
+    backgroundColor: colors.ivory,
   },
   focusedTabBarItem: {
     width: 25,
