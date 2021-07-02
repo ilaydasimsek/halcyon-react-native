@@ -10,8 +10,18 @@ export const layout = StyleSheet.create({
     alignItems: 'center',
     margin: 6,
     marginHorizontal: 12,
-    borderRadius: 18,
+    borderRadius: SIZES.borderRadius,
     backgroundColor: colors.ivory,
+  },
+  header: {
+    width: '100%',
+    top: 0,
+    zIndex: 10,
+    backgroundColor: colors.primary,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    borderBottomLeftRadius: 18,
+    borderBottomRightRadius: 18,
   },
 });
 

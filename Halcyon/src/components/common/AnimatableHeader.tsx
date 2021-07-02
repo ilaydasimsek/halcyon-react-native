@@ -7,7 +7,7 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {colors, SIZES, typography} from '../../style';
+import {colors, layout, SIZES, typography} from '../../style';
 import {images} from '../../../constants';
 
 type THeader = {
@@ -52,7 +52,7 @@ const AnimatableHeader: React.FC<THeader> = ({
   }, [headerHeight, insets]);
 
   return (
-    <Animated.View style={{...styles.main, height: headerHeight}}>
+    <Animated.View style={{...layout.header, height: headerHeight}}>
       {backgroundImage && (
         <Image
           source={images.floralBackground}
@@ -75,20 +75,11 @@ const AnimatableHeader: React.FC<THeader> = ({
 };
 
 const styles = StyleSheet.create({
-  main: {
-    width: '100%',
-    top: 0,
-    zIndex: 10,
-    backgroundColor: colors.primary,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    borderRadius: 18,
-  },
   backgroundImage: {
     width: '100%',
     height: '100%',
     position: 'absolute',
-    borderRadius: 18,
+    borderRadius: SIZES.borderRadius,
     top: 0,
   },
   image: {

@@ -1,22 +1,18 @@
 import React from 'react';
-import {Animated, StyleSheet, View} from 'react-native';
+import {Animated, StyleSheet, View, Text} from 'react-native';
 import {ScreenName} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
-import SavedItemRow from './SavedItemRow';
+import {ListRow} from '../common';
 
 const data = Array(12)
   .fill(0)
   .map((_, i) => ({
     id: i + 1,
-    title: `Yoga Routine ${i + 1}`,
+    title: 'Downward facing dog',
     iconUrl: null,
   }));
 
-type TSavedItemsList = {
-  onScroll: () => any;
-};
-
-const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
+const RoutinesList: React.FC = () => {
   const navigation = useNavigation();
   const onRowPress = (title: string, id: number) => {
     navigation.navigate(ScreenName.ROUTINE_DETAILS, {title, id});
@@ -27,13 +23,30 @@ const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
       <Animated.FlatList
         data={data}
         renderItem={({item}) => (
-          <SavedItemRow {...item} onPress={() => onRowPress(item.title, item.id)} />
+          <RoutineRow
+            title={item.title}
+            onPress={() => {
+              onRowPress(item.title, item.id);
+            }}
+          />
         )}
         style={styles.table}
         contentContainerStyle={styles.table}
-        onScroll={onScroll}
       />
     </View>
+  );
+};
+
+type TRoutinesList = {
+  title: string;
+  onPress: () => void;
+};
+
+const RoutineRow: React.FC<TRoutinesList> = ({title, onPress}) => {
+  return (
+    <ListRow onPress={onPress}>
+      <Text>{title}</Text>
+    </ListRow>
   );
 };
 
@@ -49,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SavedItemsList;
+export default RoutinesList;
