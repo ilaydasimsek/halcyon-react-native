@@ -7,7 +7,7 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {colors, SIZES, fonts} from '../../style';
+import {colors, SIZES, typography} from '../../style';
 import {images} from '../../../constants';
 
 type THeader = {
@@ -69,7 +69,7 @@ const AnimatableHeader: React.FC<THeader> = ({
           display: defaultHeightReached ? 'none' : 'flex',
         }}
       />
-      <Text style={[fonts.LightBold24, styles.text]}>{title}</Text>
+      <Text style={[typography.lightHeading1, styles.text]}>{title}</Text>
     </Animated.View>
   );
 };

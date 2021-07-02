@@ -1,7 +1,8 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {icons, images} from '../../../constants';
-import {colors, fonts, layout, shadow, SIZES} from '../../style';
+import {colors, typography, SIZES} from '../../style';
+import {ListRow} from '../common';
 
 type TSavedItemRow = {
   title: string;
@@ -11,13 +12,11 @@ type TSavedItemRow = {
 // TODO show icon using icon URL
 const SavedItemRow: React.FC<TSavedItemRow> = ({title, onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
-      <View style={[layout.tableRow, shadow.low]}>
-        <Image source={images.mandala} style={styles.image} />
-        <RowDetails title={title} />
-        <Image source={icons.next} style={styles.nextIcon} />
-      </View>
-    </TouchableOpacity>
+    <ListRow onPress={onPress}>
+      <Image source={images.mandala} style={styles.image} />
+      <RowDetails title={title} />
+      <Image source={icons.next} style={styles.nextIcon} />
+    </ListRow>
   );
 };
 
@@ -28,8 +27,8 @@ type TRowDetails = {
 const RowDetails: React.FC<TRowDetails> = ({title}) => {
   return (
     <View style={styles.details}>
-      <Text style={fonts.DarkSemibold18}>{title}</Text>
-      <Text style={fonts.LightGrayRegular14}>18:06</Text>
+      <Text style={typography.subheading1}>{title}</Text>
+      <Text style={typography.lightGrayBody1}>18:06</Text>
     </View>
   );
 };
@@ -42,8 +41,8 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   nextIcon: {
-    height: 28,
-    width: 28,
+    height: 24,
+    width: 24,
     marginRight: 8,
     tintColor: colors.primary,
   },
