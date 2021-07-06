@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 import {colors} from './Colors';
 import {SIZES} from './Sizes';
 
-export const layout = StyleSheet.create({
-  tableRow: {
+const tableLayout = StyleSheet.create({
+  row: {
     height: SIZES.tableRowHeight,
     paddingHorizontal: SIZES.tableRowPadding,
     flexDirection: 'row',
@@ -13,17 +13,35 @@ export const layout = StyleSheet.create({
     borderRadius: SIZES.borderRadius,
     backgroundColor: colors.ivory,
   },
-  header: {
+});
+
+const headerLayout = StyleSheet.create({
+  main: {
     width: '100%',
     top: 0,
     zIndex: 10,
     backgroundColor: colors.primary,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    borderBottomLeftRadius: 18,
-    borderBottomRightRadius: 18,
+    borderBottomLeftRadius: SIZES.borderRadius,
+    borderBottomRightRadius: SIZES.borderRadius,
+  },
+  background: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    borderRadius: SIZES.borderRadius,
+    top: 0,
+    overflow: 'hidden',
+    borderBottomLeftRadius: SIZES.borderRadius,
+    borderBottomRightRadius: SIZES.borderRadius,
   },
 });
+
+export const layout = {
+  table: tableLayout,
+  main: headerLayout,
+};
 
 export const shadow = StyleSheet.create({
   low: {

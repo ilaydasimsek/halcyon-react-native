@@ -2,7 +2,7 @@ import {Dimensions} from 'react-native';
 const {width, height} = Dimensions.get('window');
 
 export const SIZES = {
-  borderRadius: 14,
+  borderRadius: 8,
 
   // app dimensions
   width,

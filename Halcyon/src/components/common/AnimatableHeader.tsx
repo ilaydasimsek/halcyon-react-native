@@ -52,13 +52,11 @@ const AnimatableHeader: React.FC<THeader> = ({
   }, [headerHeight, insets]);
 
   return (
-    <Animated.View style={{...layout.header, height: headerHeight}}>
+    <Animated.View style={{...layout.main.main, height: headerHeight}}>
       {backgroundImage && (
         <Image
           source={images.floralBackground}
-          style={{
-            ...styles.backgroundImage,
-          }}
+          style={layout.main.background}
         />
       )}
       <Image
@@ -75,13 +73,6 @@ const AnimatableHeader: React.FC<THeader> = ({
 };
 
 const styles = StyleSheet.create({
-  backgroundImage: {
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-    borderRadius: SIZES.borderRadius,
-    top: 0,
-  },
   image: {
     flex: 1,
     resizeMode: 'contain',

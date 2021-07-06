@@ -8,7 +8,7 @@ type TListRow = {
 
 const ListRow: React.FC<TListRow> = ({children, onPress}) => {
   const rowDetails = (
-    <View style={[layout.tableRow, shadow.low]}>{children}</View>
+    <View style={[layout.table.row, shadow.low]}>{children}</View>
   );
   if (!onPress) {
     return rowDetails;

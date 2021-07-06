@@ -1,16 +1,18 @@
 import React from 'react';
-import {Animated, StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, FlatList} from 'react-native';
 import {ScreenName} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
 import {ListRow} from '../common';
 
-const data = Array(12)
-  .fill(0)
-  .map((_, i) => ({
-    id: i + 1,
-    title: 'Downward facing dog',
-    iconUrl: null,
-  }));
+type TData = {
+  id: number;
+  title: string;
+  iconUrl?: string;
+};
+const data: TData[] = [...Array(20)].map((_, i) => ({
+  id: i + 1,
+  title: 'Downward facing dog',
+}));
 
 const RoutinesList: React.FC = () => {
   const navigation = useNavigation();
@@ -20,9 +22,9 @@ const RoutinesList: React.FC = () => {
 
   return (
     <View style={styles.main}>
-      <Animated.FlatList
+      <FlatList<TData>
         data={data}
-        renderItem={({item}) => (
+        renderItem={({item}: {item: TData}) => (
           <RoutineRow
             title={item.title}
             onPress={() => {
