@@ -13,6 +13,10 @@ const tableLayout = StyleSheet.create({
     borderRadius: SIZES.borderRadius,
     backgroundColor: colors.ivory,
   },
+  draggedRow: {
+    height: SIZES.tableRowHeight + 2,
+    marginHorizontal: 10,
+  },
 });
 
 const headerLayout = StyleSheet.create({

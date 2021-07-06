@@ -1,53 +1,69 @@
-import React from 'react';
-import {StyleSheet, View, Text, FlatList} from 'react-native';
-import {ScreenName} from '../../../constants';
+import React, {useCallback, useState} from 'react';
+import {StyleSheet, View, Text, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {ListRow} from '../common';
+import DraggableFlatList, {
+  RenderItemParams,
+} from 'react-native-draggable-flatlist';
+import {TouchableHighlight} from 'react-native';
+import {icons} from '../../../constants';
+import {colors, layout, shadow} from '../../style';
 
 type TData = {
-  id: number;
+  key: number;
   title: string;
   iconUrl?: string;
 };
-const data: TData[] = [...Array(20)].map((_, i) => ({
-  id: i + 1,
+const exampleData: TData[] = [...Array(20)].map((_, i) => ({
+  key: i + 1,
   title: 'Downward facing dog',
 }));
 
 const RoutinesList: React.FC = () => {
-  const navigation = useNavigation();
-  const onRowPress = (title: string, id: number) => {
-    navigation.navigate(ScreenName.ROUTINE_DETAILS, {title, id});
-  };
+  const [data, setData] = useState(exampleData);
+
+  const renderItem = useCallback(
+    ({item, drag, isActive}: RenderItemParams<TData>) => {
+      return <RoutineRow data={item} onDrag={drag} isActive={isActive} />;
+    },
+    [],
+  );
 
   return (
     <View style={styles.main}>
-      <FlatList<TData>
+      <DraggableFlatList<TData>
         data={data}
-        renderItem={({item}: {item: TData}) => (
-          <RoutineRow
-            title={item.title}
-            onPress={() => {
-              onRowPress(item.title, item.id);
-            }}
-          />
-        )}
-        style={styles.table}
-        contentContainerStyle={styles.table}
+        renderItem={renderItem}
+        keyExtractor={item => `draggable-item-${item.key}`}
+        onDragEnd={({data: newData}) => setData(newData)}
       />
     </View>
   );
 };
 
 type TRoutinesList = {
-  title: string;
-  onPress: () => void;
+  data: TData;
+  onPress?: () => void;
+  onDrag: () => void;
+  isActive: boolean;
 };
 
-const RoutineRow: React.FC<TRoutinesList> = ({title, onPress}) => {
+const RoutineRow: React.FC<TRoutinesList> = ({
+  data,
+  onPress,
+  onDrag,
+  isActive,
+}) => {
   return (
-    <ListRow onPress={onPress}>
-      <Text>{title}</Text>
+    <ListRow
+      onPress={onPress}
+      style={[styles.row, isActive && styles.activeDrag]}>
+      <Text>
+        {data.title} {data.key}
+      </Text>
+      <TouchableHighlight onPressIn={onDrag} style={styles.dragButton}>
+        <Image source={icons.drag} style={styles.dragButton} />
+      </TouchableHighlight>
     </ListRow>
   );
 };
@@ -61,6 +77,18 @@ const styles = StyleSheet.create({
   table: {
     paddingTop: 4,
     paddingBottom: 12,
+  },
+  dragButton: {
+    tintColor: colors.gray,
+    width: 25,
+    height: 60,
+  },
+  row: {
+    justifyContent: 'space-between',
+  },
+  activeDrag: {
+    ...shadow.medium,
+    ...layout.table.draggedRow,
   },
 });
 

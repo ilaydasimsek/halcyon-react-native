@@ -1,14 +1,21 @@
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View, ViewProps} from 'react-native';
 import {layout, shadow} from '../../style';
 
-type TListRow = {
+type TListRowProps = ViewProps & {
   onPress?: () => void;
 };
 
-const ListRow: React.FC<TListRow> = ({children, onPress}) => {
+const ListRow: React.FC<TListRowProps> = ({
+  children,
+  onPress,
+  style,
+  ...rest
+}) => {
   const rowDetails = (
-    <View style={[layout.table.row, shadow.low]}>{children}</View>
+    <View style={[layout.table.row, shadow.low, style]} {...rest}>
+      {children}
+    </View>
   );
   if (!onPress) {
     return rowDetails;
