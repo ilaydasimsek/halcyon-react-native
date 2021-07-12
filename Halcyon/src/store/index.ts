@@ -6,9 +6,11 @@ import {
 } from '@reduxjs/toolkit';
 import {combineReducers} from 'redux';
 import temp from './Temp';
+import routines from './Routines';
 
 const rootReducer = combineReducers({
   temp,
+  routines,
 });
 
 const store = configureStore({

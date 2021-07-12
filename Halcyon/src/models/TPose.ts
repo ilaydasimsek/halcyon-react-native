@@ -1,7 +1,7 @@
-type TRoutine = {
+type TPose = {
   key: number;
   title: string;
   iconUrl?: string;
 };
 
-export default TRoutine;
+export default TPose;

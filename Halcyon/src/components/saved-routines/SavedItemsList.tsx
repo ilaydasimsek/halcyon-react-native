@@ -1,31 +1,53 @@
-import React from 'react';
-import {Animated, StyleSheet, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {
+  Animated,
+  StyleSheet,
+  View,
+  Text,
+  ActivityIndicator,
+} from 'react-native';
 import {ScreenName} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
 import SavedItemRow from './SavedItemRow';
-import {TRoutines} from '../../models';
-
-const data: TRoutines[] = Array(12)
-  .fill(0)
-  .map((_, i) => ({
-    key: i + 1,
-    title: `Yoga Routine ${i + 1}`,
-  }));
+import {useDispatch, useSelector} from 'react-redux';
+import {RootState} from '../../store';
+import ErrorScreen from '../common/ErrorScreen';
+import {fetchRoutines} from '../../networking/Routines';
+import {colors} from '../../style';
 
 type TSavedItemsList = {
   onScroll: () => any;
 };
 
 const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
+  const dispatch = useDispatch();
+  const {isLoading, error, data} = useSelector(
+    (state: RootState) => state.routines,
+  );
+
   const navigation = useNavigation();
   const onRowPress = (title: string, id: number) => {
     navigation.navigate(ScreenName.ROUTINE_DETAILS, {title, id});
   };
 
+  useEffect(() => {
+    dispatch(fetchRoutines());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return (
+      <ActivityIndicator style={styles.indicator} color={colors.primary} />
+    );
+  }
+
+  if (error) {
+    return <ErrorScreen />;
+  }
+
   return (
     <View style={styles.main}>
       <Animated.FlatList
-        data={data}
+        data={data?.routines}
         renderItem={({item}) => (
           <SavedItemRow
             {...item}
@@ -49,6 +71,13 @@ const styles = StyleSheet.create({
   table: {
     paddingTop: 4,
     paddingBottom: 12,
+  },
+  indicator: {
+    width: '100%',
+    transform: [{scale: 1.25}],
+    paddingTop: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

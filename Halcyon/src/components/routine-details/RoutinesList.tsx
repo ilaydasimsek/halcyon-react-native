@@ -5,9 +5,9 @@ import DraggableFlatList, {
 } from 'react-native-draggable-flatlist';
 import {colors} from '../../style';
 import RoutineRow from './RoutineRow';
-import {TRoutine} from '../../models';
+import {TPose} from '../../models';
 
-const exampleData: TRoutine[] = [...Array(20)].map((_, i) => ({
+const exampleData: TPose[] = [...Array(20)].map((_, i) => ({
   key: i + 1,
   title: 'Downward facing dog',
 }));
@@ -30,7 +30,7 @@ const RoutinesList: React.FC = () => {
   const scaleAnimation = useRef(new Animated.Value(1)).current;
 
   const renderItem = useCallback(
-    ({item, drag, isActive}: RenderItemParams<TRoutine>) => {
+    ({item, drag, isActive}: RenderItemParams<TPose>) => {
       return (
         <RoutineRow
           data={item}
@@ -45,7 +45,7 @@ const RoutinesList: React.FC = () => {
 
   return (
     <View style={styles.main}>
-      <DraggableFlatList<TRoutine>
+      <DraggableFlatList<TPose>
         data={data}
         renderItem={renderItem}
         onDragBegin={() => {

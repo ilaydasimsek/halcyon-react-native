@@ -1,7 +1,11 @@
-type TRoutines = {
+type TRoutine = {
   key: number;
   title: string;
   iconUrl?: string;
 };
 
-export default TRoutines;
+type TRoutines = {
+  routines: TRoutine[];
+};
+
+export {TRoutine, TRoutines};

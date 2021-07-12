@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {TError} from "../networking/ErrorHandler";
+import {TError} from '../networking/ErrorHandler';
 
 type DataType = {
   result: string;

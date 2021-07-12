@@ -1,4 +1,4 @@
-import TRoutine from './Routine';
-import TRoutines from './Routines';
+import TPose from './TPose';
+import {TRoutines, TRoutine} from './Routines';
 
-export {TRoutine, TRoutines};
+export {TRoutines, TRoutine, TPose};
