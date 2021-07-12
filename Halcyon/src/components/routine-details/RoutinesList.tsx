@@ -49,10 +49,10 @@ const RoutinesList: React.FC = () => {
         data={data}
         renderItem={renderItem}
         onDragBegin={() => {
-          scale(scaleAnimation, 1);
+          scale(scaleAnimation, 1.04);
         }}
         onRelease={() => {
-          scale(scaleAnimation, 1.04);
+          scale(scaleAnimation, 1);
         }}
         keyExtractor={item => `draggable-item-${item.key}`}
         onDragEnd={({data: newData}) => {
