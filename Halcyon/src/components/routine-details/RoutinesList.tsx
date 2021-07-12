@@ -1,70 +1,66 @@
-import React, {useCallback, useState} from 'react';
-import {StyleSheet, View, Text, Image} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {ListRow} from '../common';
+import React, {useCallback, useRef, useState} from 'react';
+import {StyleSheet, View, Animated} from 'react-native';
 import DraggableFlatList, {
   RenderItemParams,
 } from 'react-native-draggable-flatlist';
-import {TouchableHighlight} from 'react-native';
-import {icons} from '../../../constants';
-import {colors, layout, shadow} from '../../style';
+import {colors} from '../../style';
+import RoutineRow from './RoutineRow';
+import {TRoutine} from '../../models';
 
-type TData = {
-  key: number;
-  title: string;
-  iconUrl?: string;
-};
-const exampleData: TData[] = [...Array(20)].map((_, i) => ({
+const exampleData: TRoutine[] = [...Array(20)].map((_, i) => ({
   key: i + 1,
   title: 'Downward facing dog',
 }));
 
+const scale = (value: Animated.Value, toValue: number) => {
+  Animated.timing(value, {
+    useNativeDriver: false,
+    toValue: toValue,
+    duration: 300,
+  }).start();
+};
+
+const reset = (value: Animated.Value) => {
+  value.setValue(1);
+};
+
 const RoutinesList: React.FC = () => {
   const [data, setData] = useState(exampleData);
 
+  const scaleAnimation = useRef(new Animated.Value(1)).current;
+
   const renderItem = useCallback(
-    ({item, drag, isActive}: RenderItemParams<TData>) => {
-      return <RoutineRow data={item} onDrag={drag} isActive={isActive} />;
+    ({item, drag, isActive}: RenderItemParams<TRoutine>) => {
+      return (
+        <RoutineRow
+          data={item}
+          onDrag={drag}
+          isActive={isActive}
+          scaleAnimation={scaleAnimation}
+        />
+      );
     },
-    [],
+    [scaleAnimation],
   );
 
   return (
     <View style={styles.main}>
-      <DraggableFlatList<TData>
+      <DraggableFlatList<TRoutine>
         data={data}
         renderItem={renderItem}
+        onDragBegin={() => {
+          scale(scaleAnimation, 1);
+        }}
+        onRelease={() => {
+          scale(scaleAnimation, 1.04);
+        }}
         keyExtractor={item => `draggable-item-${item.key}`}
-        onDragEnd={({data: newData}) => setData(newData)}
+        onDragEnd={({data: newData}) => {
+          setData(newData);
+          reset(scaleAnimation);
+        }}
       />
     </View>
-  );
-};
-
-type TRoutinesList = {
-  data: TData;
-  onPress?: () => void;
-  onDrag: () => void;
-  isActive: boolean;
-};
-
-const RoutineRow: React.FC<TRoutinesList> = ({
-  data,
-  onPress,
-  onDrag,
-  isActive,
-}) => {
-  return (
-    <ListRow
-      onPress={onPress}
-      style={[styles.row, isActive && styles.activeDrag]}>
-      <Text>
-        {data.title} {data.key}
-      </Text>
-      <TouchableHighlight onPressIn={onDrag} style={styles.dragButton}>
-        <Image source={icons.drag} style={styles.dragButton} />
-      </TouchableHighlight>
-    </ListRow>
   );
 };
 
@@ -82,13 +78,6 @@ const styles = StyleSheet.create({
     tintColor: colors.gray,
     width: 25,
     height: 60,
-  },
-  row: {
-    justifyContent: 'space-between',
-  },
-  activeDrag: {
-    ...shadow.medium,
-    ...layout.table.draggedRow,
   },
 });
 

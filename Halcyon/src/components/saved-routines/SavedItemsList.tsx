@@ -3,13 +3,13 @@ import {Animated, StyleSheet, View} from 'react-native';
 import {ScreenName} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
 import SavedItemRow from './SavedItemRow';
+import {TRoutines} from '../../models';
 
-const data = Array(12)
+const data: TRoutines[] = Array(12)
   .fill(0)
   .map((_, i) => ({
-    id: i + 1,
+    key: i + 1,
     title: `Yoga Routine ${i + 1}`,
-    iconUrl: null,
   }));
 
 type TSavedItemsList = {
@@ -27,7 +27,10 @@ const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
       <Animated.FlatList
         data={data}
         renderItem={({item}) => (
-          <SavedItemRow {...item} onPress={() => onRowPress(item.title, item.id)} />
+          <SavedItemRow
+            {...item}
+            onPress={() => onRowPress(item.title, item.key)}
+          />
         )}
         style={styles.table}
         contentContainerStyle={styles.table}
