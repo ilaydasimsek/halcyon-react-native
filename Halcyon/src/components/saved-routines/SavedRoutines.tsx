@@ -1,34 +1,27 @@
 import * as React from 'react';
-import {View, StyleSheet, Animated} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import SavedItemsList from './SavedItemsList';
-import {COLORS} from '../../style';
-import AnimatableHeader from '../common/AnimatableHeader';
-import {useRef} from 'react';
+import {colors} from '../../style';
+import {images} from '../../../constants';
+import {BasicHeader} from '../common';
 
 const SavedRoutines: React.FC = () => {
-  const offset: Animated.Value = useRef(new Animated.Value(0)).current;
-
   return (
     <View style={styles.screen}>
-      <AnimatableHeader title="Saved Routines" animatedValue={offset} />
-      <SavedItemsList
-        onScroll={Animated.event(
-          [{nativeEvent: {contentOffset: {y: offset}}}],
-          {
-            useNativeDriver: false,
-          },
-        )}
+      <BasicHeader
+        title="Saved Routines"
+        backgroundImage={images.floralBackground}
       />
+      <SavedItemsList />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: COLORS.background,
+    height: '100%',
+    alignItems: 'flex-start',
+    backgroundColor: colors.background,
   },
 });
 

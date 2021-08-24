@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, ImageSourcePropType, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {COLORS} from '../style';
+import {colors} from '../style';
 import {icons, ScreenName} from '../../constants';
 import {Profile, SavedRoutines} from '../components';
 
@@ -56,16 +56,17 @@ const TabBarIconImage: React.FC<TTabBarIconImageProps> = ({icon, focused}) => {
 const styles = StyleSheet.create({
   navigator: {
     elevation: 0,
+    backgroundColor: colors.ivory,
   },
   focusedTabBarItem: {
     width: 25,
     height: 25,
-    tintColor: COLORS.primary,
+    tintColor: colors.primary,
   },
   unfocusedTabBarItem: {
     width: 25,
     height: 25,
-    tintColor: COLORS.secondary,
+    tintColor: colors.secondary,
   },
 });
 
