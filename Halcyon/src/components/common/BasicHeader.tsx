@@ -13,11 +13,14 @@ const BasicHeader: React.FC<THeader> = ({title, backgroundImage}) => {
   const insets = useSafeAreaInsets();
   return (
     <View
-      style={[layout.main.main, {height: SIZES.headerBaseHeight + insets.top}]}>
+      style={[
+        layout.header.main,
+        {height: SIZES.headerBaseHeight + insets.top},
+      ]}>
       {backgroundImage && (
         <Image
           source={images.floralBackground}
-          style={layout.main.background}
+          style={layout.header.background}
         />
       )}
       <Text style={[typography.lightHeading2, styles.text]}>{title}</Text>
@@ -27,7 +30,7 @@ const BasicHeader: React.FC<THeader> = ({title, backgroundImage}) => {
 
 const styles = StyleSheet.create({
   text: {
-    paddingBottom: 20,
+    height: SIZES.headerBaseHeight,
   },
 });
 

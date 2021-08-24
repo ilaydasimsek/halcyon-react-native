@@ -52,11 +52,11 @@ const AnimatableHeader: React.FC<THeader> = ({
   }, [headerHeight, insets]);
 
   return (
-    <Animated.View style={{...layout.main.main, height: headerHeight}}>
+    <Animated.View style={{...layout.header.main, height: headerHeight}}>
       {backgroundImage && (
         <Image
           source={images.floralBackground}
-          style={layout.main.background}
+          style={layout.header.background}
         />
       )}
       <Image

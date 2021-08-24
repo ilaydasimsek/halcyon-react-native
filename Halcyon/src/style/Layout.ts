@@ -44,7 +44,7 @@ const headerLayout = StyleSheet.create({
 
 export const layout = {
   table: tableLayout,
-  main: headerLayout,
+  header: headerLayout,
 };
 
 export const shadow = StyleSheet.create({

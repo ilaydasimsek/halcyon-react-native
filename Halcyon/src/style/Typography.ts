@@ -27,7 +27,7 @@ export const typography = StyleSheet.create({
     color: FONT_COLOR.light,
   },
   lightHeading2: {
-    fontSize: 22,
+    fontSize: 20,
     fontFamily: FONT_FAMILY.bold,
     color: FONT_COLOR.light,
   },

@@ -3,7 +3,6 @@ import {
   Animated,
   StyleSheet,
   View,
-  Text,
   ActivityIndicator,
 } from 'react-native';
 import {ScreenName} from '../../../constants';
@@ -16,7 +15,7 @@ import {fetchRoutines} from '../../networking/Routines';
 import {colors} from '../../style';
 
 type TSavedItemsList = {
-  onScroll: () => any;
+  onScroll?: () => any;
 };
 
 const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
