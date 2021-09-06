@@ -1,6 +1,5 @@
 import React, {ReactElement, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {RenderItemParams} from 'react-native-draggable-flatlist';
 import RoutineRow from './RoutineRow';
 import {TRoutine} from '../../models';
 import DraggableList from '../common/draggable-table/DraggableList';
@@ -12,7 +11,7 @@ const exampleData: TRoutine[] = [...Array(20)].map((_, i) => ({
 
 const RoutinesList: React.FC = () => {
   const [data, setData] = useState(exampleData);
-  function getListRow({item}: RenderItemParams<TRoutine>): ReactElement {
+  function getListRow(item: TRoutine): ReactElement {
     return <RoutineRow data={item} />;
   }
   return (
@@ -27,10 +26,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     paddingBottom: 0,
-  },
-  table: {
-    paddingTop: 4,
-    paddingBottom: 12,
   },
 });
 

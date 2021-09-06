@@ -8,14 +8,14 @@ import React, {
   useRef,
 } from 'react';
 import {Animated} from 'react-native';
-import DraggableRow from "./DraggableRow";
+import DraggableRow from './DraggableRow';
 
 type TObjectWithKey = {key: number | string};
 
 type TDraggableList<T extends TObjectWithKey> = {
   data: T[];
   onChange: (data: T[]) => void;
-  getListRow: (params: RenderItemParams<T>) => ReactElement;
+  getListRow: (item: T) => ReactElement;
 };
 
 const scale = (value: Animated.Value, toValue: number) => {
@@ -44,7 +44,7 @@ function DraggableList<T extends TObjectWithKey>({
           isActive={isActive}
           scaleAnimation={scaleAnimation}
           onDrag={drag}>
-          {getListRow({item, drag, isActive})}
+          {getListRow(item)}
         </DraggableRow>
       );
     },
