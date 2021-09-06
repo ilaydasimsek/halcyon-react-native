@@ -3,7 +3,7 @@ import {
   Animated,
   StyleSheet,
   View,
-  ActivityIndicator,
+  ActivityIndicator, FlatList,
 } from 'react-native';
 import {ScreenName} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
@@ -14,11 +14,7 @@ import ErrorScreen from '../common/ErrorScreen';
 import {fetchRoutines} from '../../networking/Routines';
 import {colors} from '../../style';
 
-type TSavedItemsList = {
-  onScroll?: () => any;
-};
-
-const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
+const SavedItemsList: React.FC = () => {
   const dispatch = useDispatch();
   const {isLoading, error, data} = useSelector(
     (state: RootState) => state.routines,
@@ -45,7 +41,7 @@ const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
 
   return (
     <View style={styles.main}>
-      <Animated.FlatList
+      <FlatList
         data={data?.routines}
         renderItem={({item}) => (
           <SavedItemRow
@@ -55,7 +51,6 @@ const SavedItemsList: React.FC<TSavedItemsList> = ({onScroll}) => {
         )}
         style={styles.table}
         contentContainerStyle={styles.table}
-        onScroll={onScroll}
       />
     </View>
   );

@@ -7,8 +7,8 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {colors, layout, SIZES, typography} from '../../style';
-import {images} from '../../../constants';
+import {layout, SIZES, typography} from '../../../style';
+import {images} from '../../../../constants';
 
 type THeader = {
   title: string;

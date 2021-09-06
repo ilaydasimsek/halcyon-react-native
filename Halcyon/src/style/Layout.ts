@@ -40,6 +40,11 @@ const headerLayout = StyleSheet.create({
     borderBottomLeftRadius: SIZES.borderRadius,
     borderBottomRightRadius: SIZES.borderRadius,
   },
+  button: {
+    tintColor: colors.ivory,
+    width: SIZES.headerBaseHeight / 2,
+    height: SIZES.headerBaseHeight / 2,
+  },
 });
 
 export const layout = {
