@@ -3,7 +3,7 @@ import {
   Image,
   StyleSheet,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import {ListRow} from '../common';
@@ -32,9 +32,9 @@ const RoutineRow: React.FC<TRoutineRowProps> = ({
         <Text>
           {data.title} {data.key}
         </Text>
-        <TouchableHighlight onPressIn={onDrag} style={styles.dragButton}>
+        <TouchableOpacity onPressIn={onDrag} style={styles.dragButton}>
           <Image source={icons.drag} style={styles.dragButton} />
-        </TouchableHighlight>
+        </TouchableOpacity>
       </ListRow>
     </Animated.View>
   );

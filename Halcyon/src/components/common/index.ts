@@ -1,5 +1,5 @@
-import AnimatableHeader from './AnimatableHeader';
+import AnimatableHeader from './header/AnimatableHeader';
 import ListRow from './ListRow';
-import BasicHeader from './BasicHeader';
+import BasicHeader from './header/BasicHeader';
 
 export {BasicHeader, AnimatableHeader, ListRow};

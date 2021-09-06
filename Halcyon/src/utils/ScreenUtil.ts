@@ -6,6 +6,8 @@ export const getScreenTitle = (screenType: ScreenName) => {
       return 'Saved Routines';
     case ScreenName.PROFILE:
       return 'Profile';
+    case ScreenName.ROUTINE_DETAILS:
+      return 'Details';
     default:
       return '';
   }
