@@ -27,18 +27,13 @@ const headerLayout = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
-    borderBottomLeftRadius: SIZES.borderRadius,
-    borderBottomRightRadius: SIZES.borderRadius,
   },
   background: {
     width: '100%',
     height: '100%',
     position: 'absolute',
-    borderRadius: SIZES.borderRadius,
     top: 0,
     overflow: 'hidden',
-    borderBottomLeftRadius: SIZES.borderRadius,
-    borderBottomRightRadius: SIZES.borderRadius,
   },
   button: {
     tintColor: colors.ivory,
