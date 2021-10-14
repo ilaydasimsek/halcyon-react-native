@@ -22,11 +22,11 @@ const tableLayout = StyleSheet.create({
 const headerLayout = StyleSheet.create({
   main: {
     width: '100%',
-    top: 0,
     zIndex: 10,
     backgroundColor: colors.primary,
-    justifyContent: 'flex-end',
+    display: 'flex',
     alignItems: 'center',
+    flexDirection: 'row',
     borderBottomLeftRadius: SIZES.borderRadius,
     borderBottomRightRadius: SIZES.borderRadius,
   },

@@ -28,25 +28,19 @@ const BasicHeader: React.FC<THeader> = ({title, backgroundImage}) => {
           style={layout.header.background}
         />
       )}
-      <Text style={[typography.lightHeading2, styles.text]}>{title}</Text>
-      <View style={styles.headerButtons}>
-        {/* TODO leading buttons other than back button */}
-        <View style={styles.buttonGroup}>
-          {navigation.canGoBack() && <BackButton />}
-        </View>
-        {/* TODO trailing buttons */}
-        <View style={styles.buttonGroup} />
+      {/* TODO leading buttons other than back button */}
+      <View style={styles.buttonGroup}>
+        {navigation.canGoBack() && <BackButton />}
       </View>
+      <Text style={[typography.lightHeading2, styles.text]}>{title}</Text>
+      {/* TODO trailing buttons */}
+      <View style={[styles.buttonGroup, styles.rightAligned]} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   text: {
-    position: 'absolute',
-    width: '100%',
-    height: SIZES.headerBaseHeight,
-    flexGrow: 1,
     textAlign: 'center',
   },
   headerButtons: {
@@ -58,6 +52,11 @@ const styles = StyleSheet.create({
   },
   buttonGroup: {
     flexDirection: 'row',
+    flex: 1,
+  },
+  rightAligned: {
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
 });
 
