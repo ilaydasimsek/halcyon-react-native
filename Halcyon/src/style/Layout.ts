@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {colors} from './Colors';
-import {SIZES} from './Sizes';
+import { StyleSheet } from 'react-native';
+import { colors } from './Colors';
+import { SIZES } from './Sizes';
 
 const tableLayout = StyleSheet.create({
   row: {
@@ -25,20 +25,25 @@ const headerLayout = StyleSheet.create({
     zIndex: 10,
     backgroundColor: colors.primary,
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     flexDirection: 'row',
+  },
+  items: {
+    flexDirection: 'row',
+    flex: 1,
+    paddingBottom: 8,
   },
   background: {
     width: '100%',
     height: '100%',
     position: 'absolute',
-    top: 0,
     overflow: 'hidden',
   },
   button: {
     tintColor: colors.ivory,
-    width: SIZES.headerBaseHeight / 2,
-    height: SIZES.headerBaseHeight / 2,
+    width: SIZES.headerBaseHeight / 1.8,
+    height: SIZES.headerBaseHeight / 1.8,
+    paddingHorizontal: 4,
   },
 });
 
