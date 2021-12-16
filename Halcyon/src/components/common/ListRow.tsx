@@ -1,5 +1,9 @@
 import React from 'react';
-import {TouchableOpacity, View, ViewProps} from 'react-native';
+import {
+  TouchableHighlight,
+  View,
+  ViewProps,
+} from 'react-native';
 import {layout, shadow} from '../../style';
 
 type TListRowProps = ViewProps & {
@@ -22,9 +26,12 @@ const ListRow: React.FC<TListRowProps> = ({
   }
 
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+    <TouchableHighlight
+      onPress={onPress}
+      activeOpacity={0.9}
+      underlayColor={'transparent'}>
       {rowDetails}
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 };
 

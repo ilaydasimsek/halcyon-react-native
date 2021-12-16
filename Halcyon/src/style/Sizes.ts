@@ -13,6 +13,6 @@ export const SIZES = {
   tableRowPadding: 10,
 
   // header
-  headerBaseHeight: 50,
+  headerBaseHeight: 44,
   headerFullHeight: 150,
 };
